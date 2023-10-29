@@ -1,5 +1,7 @@
 from django.urls import path, include
 
+from .views import register
+
 # accounts/ login/ [name='login']
 # accounts/ logout/ [name='logout']
 # accounts/ password_change/ [name='password_change']
@@ -10,5 +12,6 @@ from django.urls import path, include
 # accounts/ reset/done/ [name='password_reset_complete']
 
 urlpatterns = [
-    path('', include('django.contrib.auth.urls'))
+    path('', include('django.contrib.auth.urls')),
+    path('register/', register, name='register')
 ]
